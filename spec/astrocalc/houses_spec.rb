@@ -7,7 +7,6 @@ module Astrocalc
 
     describe "#all" do
       it "returns the houses including ASC and MC in signs" do 
-        skip
         expect(houses.all).to eq(joan_all_houses)
       end
     end
