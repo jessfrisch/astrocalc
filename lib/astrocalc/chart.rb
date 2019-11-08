@@ -6,11 +6,24 @@ module Astrocalc
       @date_place = date_place
     end
 
-    def list_celestial_bodies
-      Astrodata::CELESTIAL_BODIES.inject({}) do |bodies, body|
-        cb = CelestialBody.new(body, date_place)
-        bodies[body] = [cb.sign, cb.degree, cb.minute]; bodies
-      end
+    def planet_raw(planet)
+      Planet.new(self, planet).position_raw
+    end
+
+    def planet_positions
+      Planets.new(self).positions
+    end
+
+    def houses_raw
+      House.new(self).houses_raw
+    end
+
+    def houses
+      House.new(self).houses
+    end
+
+    def aspects
+      Aspect.new(self).aspects
     end
   end
 end

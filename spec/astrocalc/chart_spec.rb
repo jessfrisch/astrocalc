@@ -2,12 +2,34 @@ require "spec_helper"
 
 module Astrocalc
   describe Chart do
-    let(:date_place) { DatePlace.new(joan_date, joan_place) }
+    let(:test) { DATA }
+
+    let(:date_place) { DatePlace.new(test.date, test.place) }
     let(:chart) { described_class.new(date_place) }
 
-    describe "#list_celestial_bodies" do
-      it "returns an hash of names => degrees and minutes" do
-        expect(chart.list_celestial_bodies).to eq(joan_celestial_bodies)
+    describe "#planet_raw" do
+      context "when given a valid planet name" do
+        it "retrieves raw ephemeris data for the planet and chart time" do
+          expect(chart.planet_raw(test.example_planet)).to eq(test.example_planet_raw)
+        end
+      end
+    end
+
+    describe "#planet_positions" do
+      it "returns an array of planets, degrees, and minutes" do
+        expect(chart.planet_positions).to eq(test.example_planet_positions)
+      end
+    end
+
+    describe "#houses_raw" do
+      it "returns raw ephemeris data with house cusps" do
+        expect(chart.houses_raw).to eq(test.example_houses_raw)
+      end
+    end
+
+    describe "#houses" do
+      it "returns an array of sign positions of the cusps" do
+        expect(chart.houses).to eq(test.example_houses)
       end
     end
   end

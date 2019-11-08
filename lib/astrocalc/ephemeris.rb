@@ -1,32 +1,33 @@
 module Astrocalc
-  class Ephemeris
+  module Ephemeris
 
-    attr_reader :date_place
+    def self.planet_position(chart, planet)
+      julian = chart.date_place.julian_date
+      planet_number = Astrocalc::Astrodata::PLANETS.index(planet)
+      raw(julian, planet_number)
+    end
 
-    def initialize(date_place)
-      @date_place = date_place
+    def self.longitude(chart, planet)
+      planet_position(chart, planet)[0]
+    end
+
+    def self.speed(chart, planet)
+      planet_position(chart, planet)[3]
+    end
+
+    def self.houses(chart)
+      julian = chart.date_place.julian_date
+      lat = chart.date_place.latitude
+      lon = chart.date_place.longitude
+
+      Swe4r::swe_houses(julian, lat, lon, "P")
+    end
+
+    private
+
+    def self.raw(julian, planet_number)
       Swe4r::swe_set_ephe_path("")
-    end
-
-    # cb = celestial body
-
-    def get_raw(cb)
-      julian_date = @date_place.julian_date
-      cb_number = Astrocalc::Astrodata::CELESTIAL_BODIES.index(cb)
-      Swe4r::swe_calc_ut(julian_date, cb_number, Swe4r::SEFLG_MOSEPH|Swe4r::SEFLG_SPEED)
-    end
-
-    def get_lon(cb)
-      get_raw(cb)[0]
-    end
-
-    def get_speed(cb)
-      get_raw(cb)[3]
-    end
-
-    def get_houses
-      julian_date = @date_place.julian_date
-      Swe4r::swe_houses(julian_date, @date_place.lat, @date_place.lon, "P")
+      Swe4r::swe_calc_ut(julian, planet_number, Swe4r::SEFLG_MOSEPH|Swe4r::SEFLG_SPEED)
     end
   end
 end
