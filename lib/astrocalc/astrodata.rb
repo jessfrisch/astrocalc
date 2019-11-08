@@ -2,6 +2,8 @@ module Astrocalc
   module Astrodata
     PLANETS = %w(Sun Moon Mercury Venus Mars Jupiter Saturn Uranus Neptune Pluto).freeze
 
+    PLANETS_EXT = PLANETS + %w(Ascendant)
+
     SIGNS = %w(Aries Taurus Gemini Cancer Leo Virgo Libra Scorpio
 Sagittarius Capricorn Aquarius Pisces).freeze
 
@@ -12,8 +14,6 @@ Sagittarius Capricorn Aquarius Pisces).freeze
       120 => "Trine",
       60 => "Sextile"
     }.freeze
-
-    ORDER_OF_APPLICATION = %w(Pluto Neptune Uranus Saturn Mars Sun Venus Mercury Moon).freeze
 
     ORBS = {
       "Sextile" => 6,

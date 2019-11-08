@@ -83,15 +83,48 @@ module Astrocalc
       end
 
       def example_aspect_input
-        ["Sun", "Mercury"]
+        ["Sun", "Neptune"]
       end
 
       def example_aspect
-        ["Conjunction", 1, 6]
+        ["Trine", 8, 39]
       end
 
       def example_non_aspect
         ["Sun", "Pluto"]
+      end
+
+      def example_planet_aspects_input
+        "Sun"
+      end
+
+      def example_planet_aspects
+        [
+          ["Conjunction", "Sun", "Mercury", 1, 06],
+          ["Trine", "Sun", "Uranus", 3, 19],
+          ["Trine", "Sun", "Neptune", 8, 39]
+        ]
+      end
+
+      def example_aspects
+        [
+           ["Conjunction", "Sun", "Mercury", 1, 06],
+           ["Trine", "Sun", "Uranus", 3, 19],
+           ["Trine", "Sun", "Neptune", 8, 39],
+           ["Opposition", "Moon", "Mars", 0, 29],
+           ["Trine", "Moon", "Neptune", 6, 05],
+           ["Sextile", "Moon", "Pluto", 0, 14],
+           ["Trine", "Mercury", "Uranus", 4, 24],
+           ["Trine", "Mercury", "Neptune", 9, 44],
+           ["Square", "Venus", "Neptune", 2, 57],
+           ["Sextile", "Mars", "Neptune", 5, 35],
+           ["Trine", "Mars", "Pluto", 0, 15],
+           ["Conjunction", "Jupiter", "Saturn", 2, 03],
+           ["Square", "Jupiter", "Pluto", 2, 20],
+           ["Square", "Saturn", "Pluto", 4, 23],
+           ["Trine", "Uranus", "Neptune", 5, 20],
+           ["Sextile", "Neptune", "Pluto", 5, 51],
+        ]
       end
     end
   end

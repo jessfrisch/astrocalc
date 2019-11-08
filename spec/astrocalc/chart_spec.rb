@@ -32,5 +32,11 @@ module Astrocalc
         expect(chart.houses).to eq(test.example_houses)
       end
     end
+
+    describe "#aspects" do
+      it "returns an array of all planetary aspects" do
+        expect(chart.aspects).to eq(test.example_aspects)
+      end
+    end
   end
 end
