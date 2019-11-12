@@ -10,14 +10,14 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{An open source toolkit for calculating astrological
 data.}
-  spec.homepage      = "https://www.github.com"
+  spec.homepage      = "https://www.github.com/jessfrisch/astrocalc"
   spec.license       = "MIT"
 
   spec.metadata["allowed_push_host"] = "https://www.rubygems.info"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://www.github.com"
-  spec.metadata["changelog_uri"] = "https://www.github.com"
+  spec.metadata["source_code_uri"] = "https://www.github.com/jessfrisch/astrocalc"
+  spec.metadata["changelog_uri"] = "https://www.github.com/jessfrisch/astrocalc"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
