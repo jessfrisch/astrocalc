@@ -3,9 +3,7 @@ require "spec_helper"
 module Astrocalc
   describe Planets do
     let(:test) { DATA }
-
-    let(:date_place) { DatePlace.new(test.date, test.place) }
-    let(:chart) { Chart.new(date_place) }
+    let(:chart) { Chart.new(test.date, test.place) }
     let(:planets) { described_class.new(chart) }
 
     describe "#positions" do

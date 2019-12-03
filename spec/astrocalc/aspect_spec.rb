@@ -3,8 +3,7 @@
 module Astrocalc
   describe Aspect do
     let(:test) { DATA }
-    let(:date_place) { DatePlace.new(test.date, test.place) }
-    let(:chart) { Chart.new(date_place) }
+    let(:chart) { Chart.new(test.date, test.place) }
     let(:aspect) { described_class.new(chart) }
 
     describe "#aspect" do

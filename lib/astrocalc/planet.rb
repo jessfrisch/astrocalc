@@ -23,6 +23,10 @@ module Astrocalc
       calculate_position(longitude, speed)
     end
 
+    def house
+      House.new(chart).house_for(position_raw[0])
+    end
+
     private
 
     def calculate_position(longitude, speed)

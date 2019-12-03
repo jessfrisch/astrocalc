@@ -1,9 +1,11 @@
 module Astrocalc
   class Chart
     attr_reader :date_place
+    attr_reader :house_system
 
-    def initialize(date_place)
-      @date_place = date_place
+    def initialize(date, place, house_system = "placidus")
+      @date_place = DatePlace.new(date, place)
+      @house_system = house_system_symbol(house_system)
     end
 
     def planet_raw(planet)
@@ -24,6 +26,12 @@ module Astrocalc
 
     def aspects
       Aspect.new(self).aspects
+    end
+
+    private
+
+    def house_system_symbol(house_system)
+     Astrodata::HOUSE_SYSTEMS[house_system.downcase]
     end
   end
 end

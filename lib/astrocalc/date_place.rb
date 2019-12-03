@@ -3,6 +3,7 @@ module Astrocalc
 
     attr_accessor :year, :month, :hour, :minute
     attr_accessor :longitude, :latitude, :altitude
+    attr_accessor :julian
 
     def initialize(date, place)
       @year   = date[0]
@@ -14,6 +15,8 @@ module Astrocalc
       @latitude  = place[0]
       @longitude = place[1]
       @altitude  = place[2] || 0
+
+      @julian = julian_date
     end
 
     def julian_date

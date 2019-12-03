@@ -2,6 +2,8 @@ PATH
   remote: .
   specs:
     astrocalc (0.1.0)
+      swe4r
+      timezone
 
 GEM
   remote: https://rubygems.org/

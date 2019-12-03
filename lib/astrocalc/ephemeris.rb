@@ -2,7 +2,7 @@ module Astrocalc
   module Ephemeris
 
     def self.planet_position(chart, planet)
-      julian = chart.date_place.julian_date
+      julian = chart.date_place.julian
       planet_number = Astrocalc::Astrodata::PLANETS.index(planet)
       raw(julian, planet_number)
     end
@@ -19,8 +19,7 @@ module Astrocalc
       julian = chart.date_place.julian_date
       lat = chart.date_place.latitude
       lon = chart.date_place.longitude
-
-      Swe4r::swe_houses(julian, lat, lon, "P")
+      Swe4r::swe_houses(julian, lat, lon, chart.house_system)
     end
 
     private

@@ -29,6 +29,10 @@ module Astrocalc
 0.9833762182696637, 1.018798412246337, -1.3038112102911694e-05, 3.159913679005266e-05]
       end
 
+      def example_planet_raw_position
+        289.0202835856721
+      end
+
       def example_planet_longitude
         289.0202835856721
       end
@@ -56,12 +60,46 @@ module Astrocalc
         }
       end
 
+      def example_planet_house
+        10
+      end
+
+      def example_planet_house_w
+        10
+      end
+
       def example_houses_raw
         [0.0, 1.5354917422989132, 42.56551023553437, 69.26741270426848, 90.81242115381679, 112.49066875975456, 139.67421113116052, 181.53549174229892, 222.56551023553436, 249.26741270426848, 270.8124211538168, 292.49066875975456, 319.6742111311605, 1.5354917422989132, 270.8124211538168, 270.88551198153675, 180.64078765896934, 0.9651762608327802, 0.7037621692045377, 1.9544666731037048, 180.70376216920454, 0.0, 0.0]
       end
 
+      def example_houses_raw_w
+        [0.0, 0.0, 30.0, 60.0, 90.0, 120.0, 150.0, 180.0, 210.0, 240.0, 270.0, 300.0, 330.0, 1.5354917422989132, 270.8124211538168, 270.88551198153675, 180.64078765896934, 0.9651762608327802, 0.7037621692045377, 1.9544666731037048, 180.70376216920454, 0.0, 0.0]
+      end
+
       def example_house
         ["Aries", 1, 32]
+      end
+
+      def example_house_w
+        ["Aries", 0, 0]
+      end
+
+      def example_houses_w
+        [
+          [""], # 0 padded 
+          ["Aries", 0, 0],
+          ["Taurus", 0, 0],
+          ["Gemini", 0, 0],
+          ["Cancer", 0, 0],
+          ["Leo", 0, 0],
+          ["Virgo", 0, 0],
+          ["Libra", 0, 0],
+          ["Scorpio", 0, 0],
+          ["Sagittarius", 0, 0],
+          ["Capricorn", 0, 0],
+          ["Aquarius", 0, 0],
+          ["Pisces", 0, 0]
+        ]
       end
 
       def example_houses
@@ -80,6 +118,18 @@ module Astrocalc
           ["Capricorn", 22, 29],
           ["Aquarius", 19, 40]
         ]
+      end
+
+      def example_house_system
+        "whole signs"
+      end
+
+      def ascendant
+        ["Aries", 1, 32]
+      end
+
+      def midheaven
+        ["Capricorn", 0, 48]
       end
 
       def example_aspect_input

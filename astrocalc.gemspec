@@ -31,4 +31,7 @@ data.}
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+
+  spec.add_dependency "swe4r"
+  spec.add_dependency "timezone"
 end

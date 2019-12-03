@@ -20,5 +20,14 @@ Sagittarius Capricorn Aquarius Pisces).freeze
     }
     ORBS.default = 10
     ORBS.freeze
+
+    # this is used by the swiss ephemeris api
+    HOUSE_SYSTEMS = {
+      "placidus" => "P",
+      "whole signs" => "W"
+    }
+    HOUSE_SYSTEMS.default = "P"
+    HOUSE_SYSTEMS.freeze
+
   end
 end

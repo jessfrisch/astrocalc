@@ -3,9 +3,7 @@ require "spec_helper"
 module Astrocalc
   describe Chart do
     let(:test) { DATA }
-
-    let(:date_place) { DatePlace.new(test.date, test.place) }
-    let(:chart) { described_class.new(date_place) }
+    let(:chart) { described_class.new(test.date, test.place, "placidus") }
 
     describe "#planet_raw" do
       context "when given a valid planet name" do
