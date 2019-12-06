@@ -12,5 +12,12 @@ module Astrocalc
         planets
       end
     end
+
+    def houses
+      Astrodata::PLANETS.inject({}) do |planets, planet|
+        planets[planet] = Planet.new(chart, planet).house
+        planets
+      end
+    end
   end
 end

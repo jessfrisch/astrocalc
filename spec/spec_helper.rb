@@ -10,12 +10,14 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
 # Set test example
-DATA = Astrocalc::Support::Joan.new
-
+DATA = Astrocalc::Support::Steve.new
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = ".rspec_status"
+  config.expect_with :rspec do |c|
+    c.max_formatted_output_length = 2000
+  end
 
   config.expect_with :rspec do |c|
     c.syntax = :expect

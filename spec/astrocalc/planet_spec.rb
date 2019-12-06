@@ -4,7 +4,9 @@ module Astrocalc
   describe Planet do
     let(:test) { DATA }
     let(:chart) { Chart.new(test.date, test.place) }
+    let(:chart_w) { Chart.new(test.date, test.place, test.example_house_system) }
     let(:planet) { described_class.new(chart, test.example_planet) }
+    let(:planet_w) { described_class.new(chart_w, test.example_planet) }
 
     describe "#position_raw" do
       context "when given a valid planet name" do
@@ -33,7 +35,7 @@ module Astrocalc
 
         context "when given a house system" do
           it "returns the appropriate house system house" do
-            expect(planet.house).to eq(test.example_planet_house_w)
+            expect(planet_w.house).to eq(test.example_planet_house_w)
           end
         end
 

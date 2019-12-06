@@ -12,8 +12,8 @@ module Astrocalc
       @hour   = date[3]
       @minute = date[4]
 
-      @latitude  = place[0]
-      @longitude = place[1]
+      @latitude  = place[0].to_f
+      @longitude = place[1].to_f
       @altitude  = place[2] || 0
 
       @julian = julian_date

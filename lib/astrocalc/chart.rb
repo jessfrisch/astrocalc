@@ -16,6 +16,10 @@ module Astrocalc
       Planets.new(self).positions
     end
 
+    def planet_houses
+      Planets.new(self).houses
+    end
+
     def houses_raw
       House.new(self).houses_raw
     end

@@ -56,9 +56,14 @@ module Astrocalc
 
     def calculate_house_for(planet_raw)
       result = 0
-      houses = houses_raw.drop(1).take(12) << 360
+      houses = houses_raw.drop(1).take(12) << houses_raw[1]
       houses.each_cons(2) do |house1, house2|
-        if (house1..house2).include?(planet_raw)
+        # account for the wrap around
+        if house1 > house2
+          if (house1..360).include?(planet_raw) || (0..house2).include?(planet_raw)
+            result = houses.index(house1) + 1
+          end
+        elsif (house1..house2).include?(planet_raw)
           result = houses.index(house1) + 1
         end
       end

@@ -11,5 +11,11 @@ module Astrocalc
         expect(planets.positions).to eq(test.example_planet_positions)
       end
     end
+
+    describe "#houses" do
+      it "returns a hash of the planets and their houses" do
+        expect(planets.houses).to eq(test.example_planet_houses)
+      end
+    end
   end
 end
